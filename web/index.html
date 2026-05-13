@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitParty</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>GitParty</h1>
+    <button id="openModal">Cadastrar Evento</button>
+  </header>
+
+  <main class="container">
+    <section id="homeScreen">
+      <div class="section-title">
+        <h2>Eventos de Aniversário</h2>
+      </div>
+
+      <div id="eventsList" class="events-grid"></div>
+    </section>
+
+    <section id="detailsScreen" class="hidden">
+      <button class="back-btn" id="backHome">Voltar</button>
+
+      <div class="details-card">
+        <div class="details-header">
+          <h2 id="detailTitle"></h2>
+          <span id="detailDate"></span>
+        </div>
+
+        <div class="details-content">
+          <p id="detailDescription"></p>
+
+          <div class="info-grid">
+            <div class="info-box">
+              <strong>Local</strong>
+              <span id="detailLocal"></span>
+            </div>
+
+            <div class="info-box">
+              <strong>Capacidade Máxima</strong>
+              <span id="detailCapacity"></span>
+            </div>
+          </div>
+
+          <div class="upload-area">
+            <h3>Upload de Imagem</h3>
+
+            <input type="file" id="imageInput" accept="image/*" />
+
+            <button id="uploadButton">Enviar Imagem</button>
+
+            <div class="preview">
+              <img id="previewImage" src="" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal-overlay hidden" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Cadastrar Evento</h2>
+        <button class="close-btn" id="closeModal">×</button>
+      </div>
+
+      <form id="eventForm">
+        <div class="form-group">
+          <label>Título</label>
+          <input type="text" id="titulo" required />
+        </div>
+
+        <div class="form-group">
+          <label>Descrição</label>
+          <textarea id="descricao" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Data do Evento</label>
+          <input type="date" id="data_evento" required />
+        </div>
+
+        <div class="form-group">
+          <label>Local</label>
+          <input type="text" id="local" required />
+        </div>
+
+        <div class="form-group">
+          <label>Capacidade Máxima</label>
+          <input type="number" id="capacidade_maxima" required />
+        </div>
+
+        <button type="submit" class="submit-btn">
+          Salvar Evento
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
